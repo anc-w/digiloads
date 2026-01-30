@@ -1,0 +1,17 @@
+#include "DigiMouse.h"
+
+void setup() {
+  DigiMouse.begin();
+}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(1800);
+
+  for(;;) {
+    int dx = random(-60, 60);
+    int dy = random(-60, 60);
+    DigiMouse.move(dx, dy);
+    DigiMouse.delay(random(20, 120));
+  }
+}
