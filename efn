@@ -1,0 +1,25 @@
+#include "DigiKeyboard.h"
+
+void setup() {}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(1800);
+  for (int i = 0; i < 60; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_F3);
+    DigiKeyboard.delay(12);
+  }
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(400);
+
+  DigiKeyboard.print(F("https://pie.yt/?v=https://youtu.be/5oIi2M6y7G4?si=aCieoFP2A2A5dKNB&t=11&pieshare=1"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(600);  // Short delay so second opens quickly after
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(400);
+  DigiKeyboard.print(F("https://youtu.be/5oIi2M6y7G4?si=aCieoFP2A2A5dKNB&t=11"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  for(;;) {}
+}
