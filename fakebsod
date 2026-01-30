@@ -1,0 +1,12 @@
+#include "Digikeyboard.h"
+
+DigiKeyboard.sendKeyStroke(0);
+DigiKeyboard.delay(1800);
+
+DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+DigiKeyboard.delay(400);
+DigiKeyboard.print(F("https://fakebsod.com"));
+DigiKeyboard.sendKeyStroke(KEY_ENTER);
+DigiKeyboard.delay(800);
+
+DigiKeyboard.sendKeyStroke(KEY_F11);  // fullscreen
